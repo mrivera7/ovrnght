@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "baseUrl": "/",
+        "paths": {
+            "@calc/*": [
+                "calculator/build/*"
+            ]
+        },
+        "outDir": "./dist/out-tsc",
+        "target": "es6",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "declaration": true,
+        "importHelpers": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "strict": true,
+        "types": [
+          "node"
+        ]
+    }
+}
