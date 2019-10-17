@@ -13,12 +13,12 @@ export class IndexController {
         // console.log(req.params.id);
         // return res.status(200).json({ msg: 'get_called' });
         
-        // const rootDir: string = (process.env.ROOT_DIR as string);
+        const rootDir: string = (process.env.ROOT_DIR as string);
         // console.log(rootDir);
         // console.log(__dirname);
-        // return res.sendFile(path.resolve(rootDir, "calculator/build/index.html"));
+        return res.sendFile(path.resolve(rootDir, "calculator/build/index.html"));
 
-        return res.sendFile(/** What do I put in here? */);
+        // return res.sendFile(/** What do I put in here? */);
 
     }
 
