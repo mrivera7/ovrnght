@@ -1,10 +1,11 @@
 import * as path from 'path';
 import * as express from 'express';
+// import * as serveIndex from 'serve-index';
 import * as bodyParser from 'body-parser';
 import { Server } from '@overnightjs/core';
-import { IndexController } from './IndexController';
+import { IndexController } from './controllers/IndexController';
 
-const calcRoot: string = path.resolve(__dirname, "../../calculator/build");
+const calcRoot: string = path.resolve(__dirname, "../packages/calculator/build");
 
 export class SampleServer extends Server {
     constructor() {

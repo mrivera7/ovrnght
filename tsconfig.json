@@ -1,12 +1,12 @@
 {
     "compilerOptions": {
-        "baseUrl": "/",
+        "baseUrl": ".",
         "paths": {
             "@calc/*": [
-                "calculator/build/*"
+                "packages/calculator/build/*"
             ]
         },
-        "outDir": "./dist/out-tsc",
+        "outDir": "./dist",
         "target": "es6",
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
@@ -20,5 +20,13 @@
         "types": [
           "node"
         ]
-    }
+    },
+    "include": [
+        "src",
+        "packages/calculator/build"
+    ],
+    "exclude": [
+        "node_modules",
+        "packages/client"
+    ]
 }
