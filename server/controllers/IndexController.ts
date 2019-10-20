@@ -5,9 +5,10 @@ import { Controller, Middleware, Get, Post, Put, Delete } from '@overnightjs/cor
 // import * as indexHTML from '@calc/index.html';
 // <reference path="../html.d.ts" />
 // import * as indexHTML from '@calc/index.html';
-import '@calc/index.html';
+// <reference path="../html.d.ts" />
+// import '@calc/index.html';
 
-const calcRoot: string = path.resolve(__dirname, "../../packages/calculator/build");
+// const calcRoot: string = path.resolve(__dirname, "../../packages/calculator/build");
 
 @Controller('/')
 export class IndexController {
