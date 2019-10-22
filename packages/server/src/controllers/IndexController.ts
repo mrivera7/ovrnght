@@ -1,6 +1,10 @@
 import * as path from 'path';
 import { Request, Response, NextFunction } from 'express';
-import { Controller, Middleware, Get, Post, Put, Delete } from '@overnightjs/core';
+import { Controller, Middleware, Get, Post, Put, Delete, Children } from '@overnightjs/core';
+
+import { CalculatorController } from './CalculatorController';
+
+import { IndexMiddleware } from '../middleware/IndexMiddleware';
 
 // import * as indexHTML from '@calc/index.html';
 // <reference path="../html.d.ts" />
@@ -10,17 +14,24 @@ import { Controller, Middleware, Get, Post, Put, Delete } from '@overnightjs/cor
 
 // const calcRoot: string = path.resolve(__dirname, "../../packages/calculator/build");
 
-@Controller('/')
+@Controller('')
+@Children([
+    new CalculatorController(),
+])
 export class IndexController {
     
-    @Get('')
+    @Get()
+    @Middleware([ IndexMiddleware ])
     get(req: Request, res: Response): any {
+        return res.sendFile(require('client/build/index.html'));
+    }
+    // get(req: Request, res: Response): any {
         // console.log(__dirname);
         // return res.status(200).json({ msg: 'get_called' });
-        
+        // console.log(require('calculator/build/index.html'));
         // return res.sendFile(path.join(calcRoot, "index.html"));
-        return res.sendFile(require('@calc/index.html'));
-    }
+        // return res.sendFile(require('calculator/build/index.html'));
+    // }
 
     /**
     @Get('static/css/*')

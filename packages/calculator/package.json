@@ -2,6 +2,7 @@
   "name": "calculator",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/calculator",
   "dependencies": {
     "bulma": "^0.7.5",
     "lodash": "^4.17.15",

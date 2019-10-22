@@ -1,11 +1,14 @@
 import * as path from 'path';
 import * as express from 'express';
 // import * as serveIndex from 'serve-index';
+import serveStatic from 'serve-static';
 import * as bodyParser from 'body-parser';
 import { Server } from '@overnightjs/core';
 import { IndexController } from './controllers/IndexController';
 
-const calcRoot: string = path.resolve(__dirname, "../packages/calculator/build");
+import { Request, Response, NextFunction } from 'express';
+
+// const calcRoot: string = path.resolve(__dirname, "../packages/calculator/build");
 
 export class SampleServer extends Server {
     constructor() {
@@ -13,7 +16,12 @@ export class SampleServer extends Server {
         
         this.app.use(bodyParser.json());
         this.app.use(bodyParser.urlencoded({ extended: true }));
-        this.app.use(express.static(calcRoot));
+        this.app.use((req: Request, res: Response, next: NextFunction) => {
+            console.log(req.path);
+            next();
+        });
+        this.app.use(express.static(path.resolve(__dirname, '../../client/build')));
+        this.app.use('/calculator*', serveStatic(path.resolve(__dirname, '../../calculator/build')));
 
         let indexController = new IndexController();
 
