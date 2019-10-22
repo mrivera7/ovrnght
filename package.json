@@ -4,25 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && node dist/start.js",
+    "start": "node dist/start.js",
+    "build": "lerna run build && tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "private": true,
   "author": "Michael A. Rivera",
   "license": "UNLICENSED",
   "devDependencies": {
-    "@types/express": "^4.17.1",
     "lerna": "^3.18.1"
-  },
-  "dependencies": {
-    "@overnightjs/core": "^1.6.9",
-    "@types/dotenv": "^6.1.1",
-    "@types/node": "^12.11.1",
-    "@types/serve-index": "^1.7.30",
-    "body": "^5.1.0",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "parser": "^0.1.4",
-    "serve-index": "^1.9.1"
   }
 }

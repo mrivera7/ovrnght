@@ -1,5 +1,4 @@
 {
-  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "target": "es5",
     "lib": [
@@ -18,14 +17,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react",
-    "outDir": "./dist",
-    "rootDir": "./src"
+    "jsx": "react"
   },
-  "exclude": [
-    "node_modules",
-    "dist"
-  ],
   "include": [
     "src"
   ]
